@@ -6,6 +6,8 @@
                 display: inline-block;
                 vertical-align: top;
                 padding: 20px;
+                width: 190px;
+                height: 190px;
             }
         </style>
         <meta charset="utf-8">
@@ -23,13 +25,13 @@
             console.log(React);
             console.log(ReactDOM);
             function pinkBox(){
-                return React.createElement('h1', { style: { backgroundColor: 'pink', color: 'green', width: 190, height: 190 } }, 'green on pink');
+                return React.createElement('h1', { style: { backgroundColor: 'pink', color: 'green'} }, 'green on pink');
             }
             function blueBox(){
-                return React.createElement('h1', { style: { backgroundColor: 'blue', color: 'white', width: 190, height: 190 } }, 'white on blue');
+                return React.createElement('h1', { style: { backgroundColor: 'blue', color: 'white'} }, 'white on blue');
             }
             function redBox(){
-                return React.createElement('h1', { style: { backgroundColor: 'red', color: 'blue', width: 190, height: 190 } }, 'blue on red');
+                return React.createElement('h1', { style: { backgroundColor: 'red', color: 'blue'} }, 'blue on red');
             }
             ReactDOM.render([blueBox(),redBox(), pinkBox()], document.getElementById('app'));
         </script>
