@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <style media="screen">
+            h1 {
+                display: inline-block;
+                vertical-align: top;
+                padding: 20px;
+            }
+        </style>
+        <meta charset="utf-8">
+        <title>Composable Squares</title>
+        <script src="node_modules/react/umd/react.development.js"></script>
+        <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
+
+
+    </head>
+    <body>
+
+        <div id="app"></div>
+
+        <script>
+            console.log(React);
+            console.log(ReactDOM);
+            function pinkBox(){
+                return React.createElement('h1', { style: { backgroundColor: 'pink', color: 'green', width: 190, height: 190 } }, 'green on pink');
+            }
+            function blueBox(){
+                return React.createElement('h1', { style: { backgroundColor: 'blue', color: 'white', width: 190, height: 190 } }, 'white on blue');
+            }
+            function redBox(){
+                return React.createElement('h1', { style: { backgroundColor: 'red', color: 'blue', width: 190, height: 190 } }, 'blue on red');
+            }
+            ReactDOM.render([blueBox(),redBox(), pinkBox()], document.getElementById('app'));
+        </script>
+
+    </body>
+</html>
