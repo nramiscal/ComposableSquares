@@ -1,39 +1,95 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
-        <style media="screen">
-            h1 {
-                display: inline-block;
-                vertical-align: top;
-                padding: 20px;
-                width: 190px;
-                height: 190px;
-            }
-        </style>
         <meta charset="utf-8">
         <title>Composable Squares</title>
         <script src="node_modules/react/umd/react.development.js"></script>
         <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
-
-
     </head>
     <body>
 
         <div id="app"></div>
 
         <script>
-            console.log(React);
-            console.log(ReactDOM);
-            function pinkBox(){
-                return React.createElement('h1', { style: { backgroundColor: 'pink', color: 'green'} }, 'green on pink');
-            }
-            function blueBox(){
-                return React.createElement('h1', { style: { backgroundColor: 'blue', color: 'white'} }, 'white on blue');
-            }
-            function redBox(){
-                return React.createElement('h1', { style: { backgroundColor: 'red', color: 'blue'} }, 'blue on red');
-            }
-            ReactDOM.render([blueBox(),redBox(), pinkBox()], document.getElementById('app'));
+
+            const header = React.createElement('h1', {
+                style: {
+                    fontStyle: 'italic',
+                    color: 'purple'
+             }
+            }, 'Composable Squares');
+
+            const blueBox = React.createElement('h1', {
+                    style:
+                    {
+                        backgroundColor: 'blue',
+                        color: 'white',
+                        width: '190px',
+                        height: '190px',
+                        padding: '20px',
+                        display: 'inline-block',
+                        verticalAlign: 'top'
+                    }
+                }, 'white on blue');
+
+            const redBox = React.createElement('h1', {
+                    style:
+                    {
+                        backgroundColor: 'red',
+                        color: 'blue',
+                        width: '190px',
+                        height: '190px',
+                        padding: '20px',
+                        display: 'inline-block',
+                        verticalAlign: 'top'
+                    }
+                }, 'blue on red');
+
+            const pinkBox = React.createElement('h1', {
+                style:
+                {
+                    backgroundColor: 'pink',
+                    color: 'green',
+                    width: '190px',
+                    height: '190px',
+                    padding: '20px',
+                    display: 'inline-block',
+                    verticalAlign: 'top'
+                }
+            }, 'green on pink');
+
+            const squares = React.createElement('div', null, blueBox, redBox, pinkBox)
+
+            const app = React.createElement('div', null, header, squares)
+
+            ReactDOM.render(app, document.getElementById('app'))
+
+
+            // const square = React.createElement('div', {
+            //   style: {
+            //     width: '100px',
+            //     height: '100px',
+            //     backgroundColor: 'red',
+            //     margin: '10px',
+            //   }
+            // })
+            //
+            // const container = React.createElement(
+            //   // The first argument specifies the element's type
+            //   'div',
+            //
+            //   // The second argument specifies the element's attributes, or "props"
+            //   { style: { border: '5px solid blue' } },
+            //
+            //   // The remaining arguments list the element's children
+            //   square,
+            //   square
+            // )
+            //
+            // ReactDOM.render(container, document.getElementById('app'));
+
+            // credit: https://reactarmory.com/guides/learn-react-by-itself/react-basics
+
         </script>
 
     </body>
